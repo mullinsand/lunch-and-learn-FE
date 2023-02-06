@@ -7,6 +7,7 @@ const Recipe = ({image, title, url}) => {
       <img src={image} alt={title} width="80" height="80"/>
       <h3>{title}</h3>
       <a href={url}>Recipe Page</a>
+      {/* <button onClick={() => addFavorite(title, url)} ></button> */}
     </div>
   )
 }

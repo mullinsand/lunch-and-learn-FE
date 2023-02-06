@@ -10,8 +10,9 @@ const Recipes = ({recipes}) => {
   // console.log('third')
   // console.log(recipes.data ? 'true' : 'false')
   if(recipes.data){
-    console.log(recipes.data[0]);
     return (
+      <div>
+      <h2>{recipes.data[0].attributes.country}</h2>
       <div className='recipes-container' key={Date.now()}>
       {recipes.data.map((recipe) => (
           <Recipe
@@ -21,6 +22,7 @@ const Recipes = ({recipes}) => {
             />
             )
             )}
+            </div>
             </div>
     );
   } else {
