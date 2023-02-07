@@ -25,8 +25,17 @@ const Recipes = ({recipes}) => {
             </div>
             </div>
     );
-  } else {
-    <p>No results</p>
+  } else if (recipes.error) {
+    return (
+      <p>{recipes.error}</p>
+    );
+  } else if (recipes.data === []) {
+    
+  }
+  else {
+    return (
+      <p>No results</p>
+    );
   }
 }
 export default Recipes;

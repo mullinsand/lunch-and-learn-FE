@@ -4,7 +4,7 @@ import Recipes from './Recipes';
 const CountrySearch = (props) => {
   const [countryName, setCountryName] = useState("");
   const [recipes, setRecipes] = useState([])
-
+  const [errorMessage, setErrorMessage] = useState("")
   const handleCountryName = (event) => {
    setCountryName(event.currentTarget.value)
   }
@@ -12,13 +12,14 @@ const CountrySearch = (props) => {
   const handleSubmit = (uriParams, event) => {
     event.preventDefault();
 
-    console.log(event)
     const url = `http://localhost:5000/api/v1/${uriParams}`
     fetch(url)
+      // .then(response => handleError(response))
       .then(response => {
         return response.json()
       })
       .then(data=> (setRecipes(data)))
+      .catch((error) => { setErrorMessage(error) });
     }
   
   return (
@@ -32,6 +33,7 @@ const CountrySearch = (props) => {
       </form>
       <div>
         <Recipes recipes={recipes} />
+        <p>{errorMessage}</p>
       </div>
     </div>
   )
