@@ -21,9 +21,8 @@ const CountrySearch = (props) => {
       .then(data=> (setRecipes(data)))
       .catch((error) => { setErrorMessage(error) });
     }
-  
-  return (
-    <div>
+    return (
+      <div>
       <form onSubmit={(event) => handleSubmit(`recipes?country=${countryName}`, event)}>
         <input name='find_recipes' type='text' placeholder='Enter a Country' value={countryName} onChange={(event) => {handleCountryName(event)}}></input>
         <input type='submit' value='Find Recipes'/><br/>
@@ -32,7 +31,7 @@ const CountrySearch = (props) => {
         <input type='submit' value='Choose Country For me!'/>
       </form>
       <div>
-        <Recipes recipes={recipes} />
+        {!!Object.keys(recipes).length && <Recipes recipes={recipes} />}
         <p>{errorMessage}</p>
       </div>
     </div>
