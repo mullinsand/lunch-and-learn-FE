@@ -3,11 +3,16 @@ import './Recipes.css';
 import Recipe from './Recipe';
 
 const Recipes = ({recipes}) => {
+  function Capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   if(recipes.data){
     if (recipes.data.length) {
       return (
         <div>
-        <h2>{recipes.data[0].attributes.country}</h2>
+        <br/>
+        <h2>{Capitalize(recipes.data[0].attributes.country)}</h2>
         <div className='recipes-container' key={Date.now()}>
         {recipes.data.map((recipe) => (
             <Recipe
