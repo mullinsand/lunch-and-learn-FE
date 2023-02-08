@@ -4,8 +4,6 @@ import CountrySearch from './CountrySearch';
 
 function App() {
   const [countryName, setCountryName] = useState("");
-  
-
 
   return (
 
