@@ -45,7 +45,7 @@ Back-End:
 ## Features
 - Home page shows logo, search bar and random country selection button
  <p align="center">
-  <img  width="300" alt="Lunch and Learn logo" src="./src/assets/MainPage.jpg">
+  <img  width="300" alt="Main Page" src="./src/assets/MainPage.jpg">
  </p>
  <br>
 - Users can search for recipes by country, with 10 results showing up per search.
@@ -53,13 +53,13 @@ Back-End:
 - Each recipe provides a recipe link as well as a nice image of the dish.
 <br>
  <p align="center">
-  <img width="300" alt="Lunch and Learn logo" src="./src/assets/SearchResults.jpg">
+  <img width="300" alt="Search Results" src="./src/assets/SearchResults.jpg">
 </p>
 <br>
 - Error handling has also been implemented for erroneous searches.
 <br>
  <p align="center">
-  <img width="300" alt="Lunch and Learn logo" src="./src/assets/CountryNotFound.jpg">
+  <img width="300" alt="Country Not found search" src="./src/assets/CountryNotFound.jpg">
 </p>
 <br>
 <!-- - Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh. -->
