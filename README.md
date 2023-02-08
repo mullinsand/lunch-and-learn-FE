@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+<p align="center">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/LunchnLearn.png">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Introduction](#introduction)
+- [Contributors](#contributors)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Learning Goals](#learning-goals)
+<!-- - [Deployed Link](#deployed-link) -->
+- [Future Extensions](#future-extensions)
+- [Set Up](#set-up)
+- [Sources](#sources)
+- [Project Specs](#project-specs)
+- [Project Repot](#project-repo)
 
-## Available Scripts
+## Introduction
+Lunch and Learn allows users to look up recipes from a specific country and then find educational resources about that country. Users can register and login, allowing them to favorite specific recipes for later use.
 
-In the project directory, you can run:
+## Contributors
 
-### `npm start`
+[Andrew Mullins](https://github.com/mullinsand)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
+Front-End:
+<p>
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+<!-- <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white" /> -->
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+ </p>
 
-### `npm test`
+Back-End:
+<p>
+<img src="https://img.shields.io/static/v1?message=2.7.4&logo=ruby&style=for-the-badge&label=Ruby&color=darkred&labelColor=crimson)" />
+<img src="https://img.shields.io/static/v1?message=5.2.8.1&logo=rubyonrails&style=for-the-badge&label=Rails&color=crimson&labelColor=darkre" />
+<img src="https://img.shields.io/static/v1?message=14.6&=postgresql&style=for-the-badge&label=Postgresql&color=dodgerblue&labelColor=royalblue&logoColor=white"/>
+<!-- <img src="https://img.shields.io/static/v1?style=for-the-badge&label=&logoColor=white&message=GraphQL&logo=graphql&color=teal&labelColor=green"/> -->
+<img src="https://img.shields.io/static/v1?message=POSTMAN&logo=postman&style=for-the-badge&label=&color=orangered&labelColor=darkorange&logoColor=white" />
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
+- Home page shows logo, search bar and random country selection button
+ <p align="center">
+  <img  width="300" alt="Lunch and Learn logo" src="./src/assets/MainPage.jpg">
+ </p>
+ <br>
+- Users can search for recipes by country, with 10 results showing up per search.
+<br>
+- Each recipe provides a recipe link as well as a nice image of the dish.
+<br>
+ <p align="center">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/SearchResults.jpg">
+</p>
+<br>
+- Error handling has also been implemented for erroneous searches.
+<br>
+ <p align="center">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/CountryNotFound.jpg">
+</p>
+<br>
+<!-- - Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh. -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- - Users can see a list of all recipes for a country and favorite ones that they like for later use. -->
+<!-- - 100% Lighthouse accessibility score. -->
+<!-- - Mobile friendly views. -->
+<!-- - Utilizes GraphQL and Apollo for a fast, easy to navigate application. -->
+<!-- - Adopts third party libraries, such as Day.js, Google-Map-React and DatePicker.js to provide pre-tested functionality. -->
+<!-- - Implements seperation of concerns to ensure the components used to render do just that and logic is seperated.  -->
 
-### `npm run eject`
+## Learning Goals
+- Learn how to make a multi-page react app with user authenication
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployed Link
+<!-- - [Lunch&Learn on Vercel](https://fe-field-tripper-ftfe.vercel.app/) -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Extentsions
+- Pagination for recipe search
+- Login and User registration
+- Favorites recipes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Set Up
+1. Fork and clone [this](https://github.com/mullinsand/lunch-and-learn-fe) repo
+2. Type `cd FE-FieldTripper` to move into the root directory
+3. Run `npm install` to install necessary dependencies
+4. Run `npm start`
+5. Copy local url given by running `npm start` and paste it to your browser
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Sources
+- [MDN](http://developer.mozilla.org/en-US/)
+- [W3Schools](https://www.w3schools.com/)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Specs
+- The spec for this project can be found [here](https://backend.turing.edu/module3/projects/lunch_and_learn/requirements)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Repo
+- The project BE repo can be found [here](https://github.com/mullinsand/lunch-and-learn)
+- The project FE repo can be found [here](https://github.com/mullinsand/lunch-and-learn-fe)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

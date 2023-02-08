@@ -2,6 +2,8 @@ import './App.css';
 import React, { useState } from 'react';
 import CountrySearch from './CountrySearch';
 import Navbar from "./Navigation/Navbar.js";
+import lunchLearnImage from "./assets/LunchnLearn.png";
+
 
 function App() {
   const [countryName, setCountryName] = useState("");
@@ -10,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar />
       <header className="App-header">
-        <h1>Lunch and Learn</h1>
+        <img width="300" alt="Lunch and Learn logo" src={lunchLearnImage}/>
         <p>Find Recipes by Country</p>
           <CountrySearch setCountryName={setCountryName}/>
       </header>
