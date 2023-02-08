@@ -59,7 +59,7 @@ Back-End:
 - Error handling has also been implemented for erroneous searches.
 <br>
  <p align="center">
-  <img width="300" alt="Country Not found search" src="./src/assets/CountryNotFound.jpg">
+  <img width="300" alt="Country Not found search" src="./src/assets/CountryNotFound.jpg?">
 </p>
 <br>
 <!-- - Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh. -->
