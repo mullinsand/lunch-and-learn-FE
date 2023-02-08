@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" alt="Lunch and Learn logo" src="public/images/LunchnLearn.png">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/LunchnLearn.png">
 </p>
 
 ## Table of Contents
@@ -8,10 +8,8 @@
 - [Technologies](#technologies)
 - [Features](#features)
 - [Learning Goals](#learning-goals)
-- [Deployed Link](#deployed-link)
+<!-- - [Deployed Link](#deployed-link) -->
 - [Future Extensions](#future-extensions)
-- [Wins](#wins)
-- [Challenges](#challenges)
 - [Set Up](#set-up)
 - [Sources](#sources)
 - [Project Specs](#project-specs)
@@ -22,7 +20,7 @@ Lunch and Learn allows users to look up recipes from a specific country and then
 
 ## Contributors
 
-[Andrew Mullins](https://github.com/mullinsand) |
+[Andrew Mullins](https://github.com/mullinsand)
 
 
 ## Technologies
@@ -45,14 +43,30 @@ Back-End:
 
 
 ## Features
-| Destktop View | Mobile View |
-|---------------|-----------------|
-<img src="https://user-images.githubusercontent.com/63877492/207713203-95d65b37-8d20-476f-851d-30cdfffbbf7d.png" width=100%>|<p align="center"><br/><img src="https://user-images.githubusercontent.com/63877492/207713677-0f17e80c-9c5b-4d0d-b0d5-14bf2e2dfcd6.png" width=77%></p>
-<img src="https://user-images.githubusercontent.com/63877492/207714122-967d1047-9c98-44e8-917b-02505e223d13.png" width=100%>|<p align="center"><br/><img src="https://user-images.githubusercontent.com/63877492/207714313-64b0ef2b-b110-49a3-a474-ef97dcd50ba1.png" width=77%></p>
-- Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh.
+- Home page shows logo, search bar and random country selection button
+ <p align="center">
+  <img  width="300" alt="Lunch and Learn logo" src="./src/assets/MainPage.jpg">
+ </p>
+ <br>
 - Users can search for recipes by country, with 10 results showing up per search.
+<br>
 - Each recipe provides a recipe link as well as a nice image of the dish.
-- Users can see a list of all recipes for a country and favorite ones that they like for later use.
+<br>
+ <p align="center">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/SearchResults.jpg">
+</p>
+<br>
+- Error handling has also been implemented for erroneous searches.
+<br>
+ <p align="center">
+  <img width="300" alt="Lunch and Learn logo" src="./src/assets/CountryNotFound.jpg">
+</p>
+<br>
+<!-- - Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh. -->
+
+
+
+<!-- - Users can see a list of all recipes for a country and favorite ones that they like for later use. -->
 <!-- - 100% Lighthouse accessibility score. -->
 <!-- - Mobile friendly views. -->
 <!-- - Utilizes GraphQL and Apollo for a fast, easy to navigate application. -->
