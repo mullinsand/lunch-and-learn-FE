@@ -1,8 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-import CountrySearch from './CountrySearch';
-import Navbar from "./Navigation/Navbar.js";
-import lunchLearnImage from "./assets/LunchnLearn.png";
+import CountrySearch from '../CountrySearch/CountrySearch';
+import Navbar from "../Navigation/Navbar.js";
+import lunchLearnImage from "../assets/LunchnLearn.png";
 
 
 function App() {

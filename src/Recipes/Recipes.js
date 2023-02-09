@@ -1,6 +1,6 @@
 import React from 'react';
 import './Recipes.css';
-import Recipe from './Recipe';
+import Recipe from '../Recipe/Recipe';
 
 const Recipes = ({recipes}) => {
   function Capitalize(str){

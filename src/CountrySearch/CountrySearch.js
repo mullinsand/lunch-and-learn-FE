@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Recipes from './Recipes';
+import Recipes from '../Recipes/Recipes';
 
 const CountrySearch = (props) => {
   const [countryName, setCountryName] = useState("");
