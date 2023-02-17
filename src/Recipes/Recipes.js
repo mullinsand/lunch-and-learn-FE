@@ -1,6 +1,7 @@
 import React from 'react';
 import './Recipes.css';
 import Recipe from '../Recipe/Recipe';
+import { Link } from 'react-router-dom';
 
 const Recipes = ({recipes}) => {
   function Capitalize(str){
@@ -12,18 +13,19 @@ const Recipes = ({recipes}) => {
       return (
         <div>
         <br/>
-        <h2>{Capitalize(recipes.data[0].attributes.country)}</h2>
-        <div className='recipes-container' key={Date.now()}>
-        {recipes.data.map((recipe) => (
-            <Recipe
-                image={recipe.attributes.image}
-                title = {recipe.attributes.title}
-                url = {recipe.attributes.url}
-              />
-              )
-              )}
-              </div>
-              </div>
+          <h2>Recipes from {Capitalize(recipes.data[0].attributes.country)}</h2>
+          <div className='recipes-container' key={Date.now()}>
+            {
+            recipes.data && recipes.data.length && recipes.datarecipes.data.map((recipe) => (
+                <Recipe
+                    image={recipe.attributes.image}
+                    title = {recipe.attributes.title}
+                    url = {recipe.attributes.url}
+                  />
+                  ))         
+            }
+          </div>
+        </div>
       );
     } else {
       return (
