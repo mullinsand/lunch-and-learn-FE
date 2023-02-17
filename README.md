@@ -86,7 +86,7 @@ Back-End:
 
 ## Set Up
 1. Fork and clone [this](https://github.com/mullinsand/lunch-and-learn-fe) repo
-2. Type `cd FE-FieldTripper` to move into the root directory
+2. Type `cd lunch-and-learn-fe` to move into the root directory
 3. Run `npm install` to install necessary dependencies
 4. Run `npm start`
 5. Copy local url given by running `npm start` and paste it to your browser
