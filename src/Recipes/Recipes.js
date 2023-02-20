@@ -2,8 +2,11 @@ import React from 'react';
 import './Recipes.css';
 import Recipe from '../Recipe/Recipe';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
-const Recipes = ({recipes}) => {
+const Recipes = (props) => {
+  const recipes = props.recipes
+  const countryName = props.countryName
   function Capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -14,9 +17,12 @@ const Recipes = ({recipes}) => {
         <div>
         <br/>
           <h2>Recipes from {Capitalize(recipes.data[0].attributes.country)}</h2>
+          <Link to={`/country/${countryName}`} className='link'>
+            <Button variant='dark'>Learn about {countryName}</Button>
+          </Link>
           <div className='recipes-container' key={Date.now()}>
             {
-            recipes.data && recipes.data.length && recipes.datarecipes.data.map((recipe) => (
+            recipes.data && recipes.data.length && recipes.data.map((recipe) => (
                 <Recipe
                     image={recipe.attributes.image}
                     title = {recipe.attributes.title}
