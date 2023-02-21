@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Recipes from '../Recipes/Recipes';
+import Button from 'react-bootstrap/Button';
 
 const CountrySearch = (props) => {
   const [countryName, setCountryName] = useState("");
@@ -31,7 +32,7 @@ const CountrySearch = (props) => {
         <input type='submit' value='Choose Country For me!'/>
       </form>
       <div>
-        {!!Object.keys(recipes).length && <Recipes recipes={recipes} />}
+        {!!Object.keys(recipes).length && <Recipes recipes={recipes} countryName = {countryName}/>}
         <p>{errorMessage}</p>
       </div>
     </div>
