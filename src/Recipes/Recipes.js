@@ -3,6 +3,7 @@ import './Recipes.css';
 import Recipe from '../Recipe/Recipe';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import CountryLearning from '../CountryLearning/CountryLearning';
 
 const Recipes = (props) => {
   const recipes = props.recipes
@@ -17,7 +18,7 @@ const Recipes = (props) => {
         <div>
         <br/>
           <h2>Recipes from {Capitalize(recipes.data[0].attributes.country)}</h2>
-          <Link to={`/country/${countryName}`} className='link'>
+          <Link to={`/country/${countryName}`}>
             <Button variant='dark'>Learn about {countryName}</Button>
           </Link>
           <div className='recipes-container' key={Date.now()}>

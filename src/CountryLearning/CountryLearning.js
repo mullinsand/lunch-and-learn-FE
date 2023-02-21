@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+import './CountryLearning.css';
 
-CountryLearning = (props) => {
-  
+const CountryLearning = (props) => {
+  return (
+    <div>
+      You did it!
+    </div>
+  )
 }
+
+export default CountryLearning;
