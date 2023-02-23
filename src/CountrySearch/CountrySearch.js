@@ -6,13 +6,13 @@ const CountrySearch = (props) => {
   const [countryName, setCountryName] = useState("");
   const [recipes, setRecipes] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
+  const [randomCountry, setRandomCountry] = useState(false)
   const handleCountryName = (event) => {
    setCountryName(event.currentTarget.value)
   }
 
-  const handleSubmit = (uriParams, event) => {
+  const handleSubmit = (uriParams, event, randomCountrySearch) => {
     event.preventDefault();
-
     const url = `http://localhost:5000/api/v1/${uriParams}`
     fetch(url)
       // .then(response => handleError(response))
@@ -21,6 +21,11 @@ const CountrySearch = (props) => {
       })
       .then(data=> (setRecipes(data)))
       .catch((error) => { setErrorMessage(error) });
+    if (randomCountrySearch) {
+      let randomCountry = recipes.data && recipes.data.length && recipes.data[0].attributes.country
+      randomCountry === 0 ? randomCountry = "" : randomCountry
+      setCountryName()}
+    console.log(countryName)
     }
     return (
       <div>
@@ -28,7 +33,7 @@ const CountrySearch = (props) => {
         <input name='find_recipes' type='text' placeholder='Enter a Country' value={countryName} onChange={(event) => {handleCountryName(event)}}></input>
         <input type='submit' value='Find Recipes'/><br/>
       </form>
-      <form onSubmit={(event) => handleSubmit('recipes', event)}>
+      <form onSubmit={(event) => handleSubmit('recipes', event, true)}>
         <input type='submit' value='Choose Country For me!'/>
       </form>
       <div>

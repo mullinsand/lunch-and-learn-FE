@@ -6,11 +6,13 @@ import Button from 'react-bootstrap/Button';
 import CountryLearning from '../CountryLearning/CountryLearning';
 
 const Recipes = (props) => {
+  console.log(props)
   const recipes = props.recipes
   const countryName = props.countryName
   function Capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+  
 
   if(recipes.data){
     if (recipes.data.length) {
