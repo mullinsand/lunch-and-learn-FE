@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import CountryLearning from '../CountryLearning/CountryLearning';
 
+
 const Recipes = (props) => {
   const recipes = props.recipes
   const countryName = props.countryName
-  function Capitalize(str){
+  function capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
@@ -17,7 +18,7 @@ const Recipes = (props) => {
       return (
         <div>
         <br/>
-          <h2>Recipes from {Capitalize(recipes.data[0].attributes.country)}</h2>
+          <h2>Recipes from {capitalize(countryName)}</h2>
           <Link to={`/country/${countryName}`}>
             <Button variant='dark'>Learn about {countryName}</Button>
           </Link>

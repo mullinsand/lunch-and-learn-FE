@@ -1,0 +1,16 @@
+.scrollimages {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+.card{
+  display: inline-block;
+}
+
+img {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
