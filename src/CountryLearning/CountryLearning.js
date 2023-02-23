@@ -37,15 +37,17 @@ const CountryLearning = (props) => {
   const videoId = learningResources.data && learningResources.data.attributes.video.video_id
   // const videoId = learningResources.data.attributes.video.video_id
   // console.log(videoId)
+
   return (
     <div>
       <h1>{Capitalize(countryName)}</h1>
+      <p>{errorMessage}</p>
       <YouTube videoId={videoId} onReady={onReady} />
       <div class="scrollimages">
           {
             learningResources.data && learningResources.data.attributes.images.map((image) =>
               <div class="card">
-                <img src={image.url} alt={image.alt_tag}/>
+                <img class="country-pics" src={image.url} alt={image.alt_tag}/>
               </div>
             )
           }

@@ -7,11 +7,13 @@ import CountryLearning from '../CountryLearning/CountryLearning';
 
 
 const Recipes = (props) => {
+  // console.log(props)
   const recipes = props.recipes
   const countryName = props.countryName
   function capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+  
 
   if(recipes.data){
     if (recipes.data.length) {
