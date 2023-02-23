@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Recipes from '../Recipes/Recipes';
 import Button from 'react-bootstrap/Button';
 
@@ -6,10 +6,14 @@ const CountrySearch = (props) => {
   const [countryName, setCountryName] = useState("");
   const [recipes, setRecipes] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
-  const [randomCountry, setRandomCountry] = useState(false)
   const handleCountryName = (event) => {
    setCountryName(event.currentTarget.value)
   }
+
+  useEffect(() => {
+    const randomCountry = recipes.data && recipes.data.length && recipes.data[0].attributes.country ? recipes.data[0].attributes.country : "";
+    setCountryName(randomCountry);}
+  , [recipes])
 
   const handleSubmit = (uriParams, event, randomCountrySearch) => {
     event.preventDefault();
@@ -21,11 +25,6 @@ const CountrySearch = (props) => {
       })
       .then(data=> (setRecipes(data)))
       .catch((error) => { setErrorMessage(error) });
-    if (randomCountrySearch) {
-      let randomCountry = recipes.data && recipes.data.length && recipes.data[0].attributes.country
-      randomCountry === 0 ? randomCountry = "" : randomCountry
-      setCountryName()}
-    console.log(countryName)
     }
     return (
       <div>
