@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CountryLearning.css';
 import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const CountryLearning = (props) => {
   const [learningResources, setLearningResources] = useState({})
@@ -40,10 +41,10 @@ const CountryLearning = (props) => {
     <div>
       <h1>{Capitalize(countryName)}</h1>
       <YouTube videoId={videoId} onReady={onReady} />
-      <div class="container horizontal-scrollable">
+      <div class="scrollimages">
           {
             learningResources.data && learningResources.data.attributes.images.map((image) =>
-              <div class="col-xs-4">
+              <div class="card">
                 <img src={image.url} alt={image.alt_tag}/>
               </div>
             )
