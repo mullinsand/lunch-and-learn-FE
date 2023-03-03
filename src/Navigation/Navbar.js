@@ -8,7 +8,7 @@ const linkStyle = {
   color: 'grey'
 };
 
-const Navbar = ({currentUser}) => {
+const Navbar = ({currentUser, handleLogout}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <button
@@ -42,8 +42,12 @@ const Navbar = ({currentUser}) => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link style={linkStyle} to={`/login`}>
-              {currentUser.name && `Logged in as ${currentUser.name}`}
+            {currentUser.name && `Logged in as ${currentUser.name}`}
+          </li>
+
+          <li className="nav-item">
+            <Link style={linkStyle} to={`/`} onClick={handleLogout}>
+              {currentUser.name && "Logout"}
             </Link>
           </li>
 
