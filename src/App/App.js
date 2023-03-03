@@ -19,7 +19,7 @@ function App() {
   console.log(currentUser)
   return (
       <main>
-        <Navbar />
+        <Navbar currentUser={currentUser} />
         <Routes>
           <Route path="country/:countryName" element={<CountryLearning />} />
           <Route path="/register" element={<Register handleLogin={handleLogin}/>} />

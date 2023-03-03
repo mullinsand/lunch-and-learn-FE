@@ -8,7 +8,7 @@ const linkStyle = {
   color: 'grey'
 };
 
-const Navbar = () => {
+const Navbar = ({currentUser}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
       <button
@@ -33,14 +33,20 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link style={linkStyle} to={`/register`}>
-                Register
+                {currentUser.name ? "" : "Register"}
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Login
-            </a>
+            <Link style={linkStyle} to={`/login`}>
+            {currentUser.name ? "" : "Login"}
+            </Link>
           </li>
+          <li className="nav-item">
+            <Link style={linkStyle} to={`/login`}>
+              {currentUser.name && `Logged in as ${currentUser.name}`}
+            </Link>
+          </li>
+
           {/* <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
