@@ -10,10 +10,25 @@ const Recipes = (props) => {
   // console.log(props)
   const recipes = props.recipes
   const countryName = props.countryName
+  const userFavorites = props.userFavorites.data
   function capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-  
+  console.log(recipes)
+  console.log(props)
+  console.log(props.loggedIn)
+
+  function isFavorite(url){
+    if(props.loggedIn) {
+      const favorited = false
+      userFavorites.map((favorite) => {
+        if(favorite.attributes.recipe_link === url){
+          favorited = true
+        }
+      })
+      return favorited
+    }
+  }
 
   if(recipes.data){
     if (recipes.data.length) {
@@ -31,6 +46,9 @@ const Recipes = (props) => {
                     image={recipe.attributes.image}
                     title = {recipe.attributes.title}
                     url = {recipe.attributes.url}
+                    favorite = {isFavorite(recipe.attributes.url)}
+                    countryName = {countryName}
+                    addFavorite={props.addFavorite}
                   />
                   ))         
             }

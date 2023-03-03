@@ -12,18 +12,18 @@ import { useNavigate} from "react-router-dom";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
   const [countryName, setCountryName] = useState("");
   const [userFavorites, setUserFavorites] = useState([])
   const navigate = useNavigate();
 
   function handleLogin(userInfo) {
-    console.log(currentUser)
     setCurrentUser(userInfo);
-    console.log("after")
-
-    console.log(currentUser)
+    setLoggedIn(true);
+    console.log(loggedIn)
     getUserFavorites(userInfo);
   }
+
   function handleLogout() {
     setCurrentUser("");
     navigate("/")
@@ -39,11 +39,13 @@ function App() {
         return response.json()
       })
       .then(data=> setUserFavorites(data))
-      console.log(userFavorites)
     } else {
       setUserFavorites([])
     }
-    console.log(currentUser.api_key)
+  }
+
+  function addFavorite() {
+
   }
 
   return (
@@ -53,7 +55,7 @@ function App() {
           <Route path="country/:countryName" element={<CountryLearning />} />
           <Route path="/register" element={<Register handleLogin={handleLogin}/>} />
           <Route path="/login" element={<Login handleLogin={handleLogin}/>} />
-          <Route path="/" element={<BaseForm currentUser={currentUser}/>} />
+          <Route path="/" element={<BaseForm currentUser={currentUser} userFavorites={userFavorites} loggedIn={loggedIn} addFavorite={addFavorite}/>} />
           {/* <Route path="*" element={<BaseForm/>} /> */}
         </Routes>
       </main>

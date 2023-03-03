@@ -42,7 +42,9 @@ const Navbar = ({currentUser, handleLogout}) => {
             </Link>
           </li>
           <li className="nav-item">
-            {currentUser.name && `Logged in as ${currentUser.name}`}
+            <Link style={linkStyle} >
+              {currentUser.name && `Logged in as ${currentUser.name}`}
+            </Link>
           </li>
 
           <li className="nav-item">
