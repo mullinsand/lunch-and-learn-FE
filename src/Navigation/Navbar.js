@@ -1,5 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import { Link } from 'react-router-dom';
+
+const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: 'grey'
+};
 
 const Navbar = () => {
   return (
@@ -25,9 +32,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Register
-            </a>
+            <Link style={linkStyle} to={`/register`}>
+                Register
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
