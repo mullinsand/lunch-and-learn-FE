@@ -1,14 +1,14 @@
 import './Register.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate} from "react-router-dom";
 
 
-function Register() {
+function Register({handleLogin}) {
   const [userEmail, setUserEmail] = useState('')
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
-  const [loggedUserInfo, setLoggedUserInfo] = useState({})
 
   const userInfo = {
     "name": userName,
@@ -40,17 +40,17 @@ function Register() {
     }
   }
 
+  const navigate = useNavigate();
+
   function determineUserInfo(data) {
     if(data.data) {
-      setLoggedUserInfo(data.data.attributes)
-      setErrorMessage('')
+      handleLogin(data.data.attributes)
+      navigate("/")
     } else {
       setErrorMessage(data.errors)
-      setLoggedUserInfo({})
     }
   }
-  
-  console.log(loggedUserInfo)
+
   function handleSubmit(event) {
     event.preventDefault();
     if (userName !== '' && userEmail !== '' && password !== '' && confirmPassword !== '') {
@@ -58,11 +58,9 @@ function Register() {
       .then(response => {
         return response.json()
       })
-      .then(data=> (determineUserInfo(data)))
-      .catch((error) => { setErrorMessage(error) });
+      .then(data=> (determineUserInfo(data)));
     } else {
       setErrorMessage('Please fill out all fields')
-      setLoggedUserInfo({})
     }
   }
 
@@ -72,7 +70,6 @@ function Register() {
           Register as a New User!
         </h1>
         {errorMessage && (<p>{errorMessage}</p>)}
-        <p>{loggedUserInfo && loggedUserInfo.api_key}</p>
         <form >
           <p>User Name:
             <input id='user-name' type='text' placeholder='Your User Name' onChange = {(e) => handleInputChange(e)} value={userName}></input>
