@@ -6,8 +6,6 @@ import lunchLearnImage from "../assets/LunchnLearn.png";
 
 function BaseForm({currentUser}) {
   const [countryName, setCountryName] = useState("");
-  console.log('base')
-  console.log(currentUser)
   return (
     <div className="App">
         <header className="App-header">
