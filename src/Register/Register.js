@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 
 
 function Register() {
-  const [userEmail, setUserEmail] = useState(null)
-  const [password, setPassword] = useState(null)
-  const [confirmPassword, setConfirmPassword] = useState(null)
+  const [userEmail, setUserEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
   function handleInputChange(e) {
@@ -20,9 +20,10 @@ function Register() {
       setConfirmPassword(value)
     }
   }
-  
-  function handleSubmit() {
-    if (typeof(userEmail) === 'string' && typeof(userEmail) === 'string' && typeof(userEmail) === 'string') {
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (userEmail !== '' && password !== '' && confirmPassword !== '') {
 
     } else {
       setErrorMessage('Please fill out all fields')
@@ -34,9 +35,9 @@ function Register() {
         <h1>
           Register as a New User!
         </h1>
-        <p>{errorMessage}</p>
+        {errorMessage && (<p>{errorMessage}</p>)}
         
-        <form onSubmit={handleSubmit}>
+        <form >
           <p>Email:
             <input id='email' type='text' placeholder='Your Email' onChange = {(e) => handleInputChange(e)} value={userEmail}></input>
           </p>
@@ -46,7 +47,7 @@ function Register() {
           <p>Confirm Password:
             <input id='confirm-password' type='text' placeholder='Password Confirmation' onChange = {(e) => handleInputChange(e)} value={confirmPassword}></input>
           </p>
-          <input type='submit' value='Register'/>
+          <input type='submit' value='Register' onClick={handleSubmit} />
         </form>
       </div>
   );
