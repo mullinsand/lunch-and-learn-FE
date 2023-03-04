@@ -69,6 +69,8 @@ function App() {
     }
   
   function deleteFavorite(favoriteId) {
+    console.log(favoriteId)
+    console.log(currentUser.api_key)
     const params = {
       api_key: currentUser.api_key,
       favorite_id: favoriteId
