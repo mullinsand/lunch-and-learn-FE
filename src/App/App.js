@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from "../Navigation/Navbar.js";
 import BaseForm from '../BaseForm/BaseForm';
 import Register from '../Register/Register';
+import Favorites from '../Favorites/Favorites';
 import Login from '../Login/Login';
 import CountryLearning from '../CountryLearning/CountryLearning';
 import { Routes, Route } from 'react-router-dom';
@@ -66,6 +67,26 @@ function App() {
         }
       });
     }
+  
+  function deleteFavorite(favoriteId) {
+    const params = {
+      api_key: currentUser.api_key,
+      favorite_id: favoriteId
+    }
+
+    const requestOptions = {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json',
+                'accept': 'application/json'},
+      body: JSON.stringify( params )
+    }
+    fetch(`http://localhost:5000//api/v1/favorites`, requestOptions)
+    .then(response => {
+      if(response.ok) {
+        getUserFavorites(currentUser)
+      }
+    });
+  }
 
   return (
       <main>
@@ -73,9 +94,9 @@ function App() {
         <Routes>
           <Route path="country/:countryName" element={<CountryLearning />} />
           <Route path="/register" element={<Register handleLogin={handleLogin}/>} />
+          <Route path="/favorites" element={<Favorites userFavorites={userFavorites} deleteFavorite={deleteFavorite}/>} />
           <Route path="/login" element={<Login handleLogin={handleLogin}/>} />
           <Route path="/" element={<BaseForm currentUser={currentUser} userFavorites={userFavorites} loggedIn={loggedIn} addFavorite={addFavorite}/>} />
-          {/* <Route path="*" element={<BaseForm/>} /> */}
         </Routes>
       </main>
   );

@@ -26,10 +26,10 @@ const Navbar = ({currentUser, handleLogout}) => {
 
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
+          <li className="nav-item">
+            <Link style={linkStyle} to={`/`}>
+              Home
+            </Link>
           </li>
           <li className="nav-item">
             <Link style={linkStyle} to={`/register`}>
@@ -46,7 +46,11 @@ const Navbar = ({currentUser, handleLogout}) => {
               {currentUser.name && `Logged in as ${currentUser.name}`}
             </Link>
           </li>
-
+          <li className="nav-item">
+            <Link style={linkStyle} to={"/favorites"}>
+              {currentUser.name && "Favorites"}
+            </Link>
+          </li>
           <li className="nav-item">
             <Link style={linkStyle} to={`/`} onClick={handleLogout}>
               {currentUser.name && "Logout"}
