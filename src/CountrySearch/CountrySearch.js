@@ -36,7 +36,7 @@ const CountrySearch = (props) => {
         <input type='submit' value='Choose Country For me!'/>
       </form>
       <div>
-        {!!Object.keys(recipes).length && <Recipes recipes={recipes} countryName = {countryName} loggedIn={props.loggedIn} userFavorites={props.userFavorites}/>}
+        {!!Object.keys(recipes).length && <Recipes recipes={recipes} countryName = {countryName} loggedIn={props.loggedIn} userFavorites={props.userFavorites} addFavorite={props.addFavorite}/>}
         <p>{errorMessage}</p>
       </div>
     </div>

@@ -5,8 +5,6 @@ import lunchLearnImage from "../assets/LunchnLearn.png";
 
 
 function BaseForm({currentUser, userFavorites, loggedIn, addFavorite}) {
-  console.log('base')
-  console.log(loggedIn)
   const [countryName, setCountryName] = useState("");
   return (
     <div className="App">

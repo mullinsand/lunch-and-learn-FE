@@ -28,11 +28,12 @@ function App() {
     setCurrentUser("");
     navigate("/")
   }
-  const requestOptions = {
-    headers: {'Content-Type': 'application/json',
-              'accept': 'application/json'}
-  }
+
   function getUserFavorites(currentUser) {
+    const requestOptions = {
+      headers: {'Content-Type': 'application/json',
+                'accept': 'application/json'}
+    }
     if(currentUser && currentUser.api_key) {
       fetch(`http://localhost:5000//api/v1/favorites?api_key=${currentUser.api_key}`, requestOptions)
       .then(response => {
@@ -44,9 +45,27 @@ function App() {
     }
   }
 
-  function addFavorite() {
-
-  }
+  function addFavorite(countryName, title, url) {
+      const params = {
+        api_key: currentUser.api_key,
+        country: countryName,
+        recipe_link: url,
+        recipe_title: title
+      }
+  
+      const requestOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',
+                  'accept': 'application/json'},
+        body: JSON.stringify( params )
+      }
+      fetch(`http://localhost:5000//api/v1/favorites`, requestOptions)
+      .then(response => {
+        if(response.ok) {
+          getUserFavorites(currentUser)
+        }
+      });
+    }
 
   return (
       <main>

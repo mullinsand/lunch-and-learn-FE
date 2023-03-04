@@ -14,13 +14,10 @@ const Recipes = (props) => {
   function capitalize(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-  console.log(recipes)
-  console.log(props)
-  console.log(props.loggedIn)
 
   function isFavorite(url){
     if(props.loggedIn) {
-      const favorited = false
+      let favorited = false
       userFavorites.map((favorite) => {
         if(favorite.attributes.recipe_link === url){
           favorited = true
@@ -29,7 +26,7 @@ const Recipes = (props) => {
       return favorited
     }
   }
-
+  console.log(recipes)
   if(recipes.data){
     if (recipes.data.length) {
       return (
